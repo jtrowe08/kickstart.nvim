@@ -5,4 +5,13 @@
 
 ---@module 'lazy'
 ---@type LazySpec
-return {}
+return {
+  {
+    name = 'local-terminals',
+    dir = vim.fn.stdpath 'config',
+    config = function()
+      require('custom.plugins.toggle_term.toggle_term').setup()
+      require('custom.plugins.copilot_term.copilot_term').setup()
+    end,
+  },
+}
